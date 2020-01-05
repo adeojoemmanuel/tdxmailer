@@ -24,7 +24,7 @@ try {
     $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = 'emmanuel.adeojo.ibk@gmail.com';                 // SMTP username
-    $mail->Password = 'LORDflex22';                           // SMTP password
+    $mail->Password = 'LORDflex2221';                           // SMTP password
     $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 465;                                    // TCP port to connect to 587
 
