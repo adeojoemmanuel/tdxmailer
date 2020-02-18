@@ -77,7 +77,7 @@ try {
 					
 					<tr>
 						<td align="center" bgcolor="#f9f9f9" style="color: #ffffff; font-family: Arial, sans-serif; font-size: 36px; font-weight: bold;">
-							<img src="https://raw.githubusercontent.com/adeojoemmanuel/tdxserver/master/logo.png" alt="" data-default="placeholder" style="width:320px;">
+							<img src="https://raw.githubusercontent.com/adeojoemmanuel/tdxserver/master/logo.png" alt="" data-default="placeholder" style="width:220px; height:220px">
 						</td>
 					</tr>
 					
