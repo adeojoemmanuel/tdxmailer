@@ -30,7 +30,7 @@ try {
     $mail->addAddress($email, $fullname);     // Add a recipient
     $mail->addReplyTo('noreply@tradexplorer.com', 'Do Not Reply');
 	
-	$url = 'http://localhost:1000/password/token/'.$id.'/'.$token;
+	$url = 'http://tradexplora.com.ng/auth/password/token/'.$id.'/'.$token;
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
