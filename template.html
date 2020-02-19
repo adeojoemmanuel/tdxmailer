@@ -1,44 +1,4 @@
-<?php
-// Import PHPMailer classes into the global namespace
-// These must be at the top of your script, not inside a function
-//header("Content-Type: application/json");
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-//Load Composer's autoloader
-require './vendor/autoload.php';
-
-$email    = $_GET["email"];
-$fullname = $_GET["fullname"];
-$token    = $_GET["token"];
-$id       = $_GET["id"];
-$from     = $_GET["from"];
-
-$mail = new PHPMailer(true);
-
-// Passing `true` enables exceptions
-try {
-    //Server settings
-    $mail->SMTPDebug = 1; // Enable verbose debug output
-    $mail->isSMTP(); // Set mailer to use SMTP
-    $mail->Host       = 'smtp.gmail.com'; // Specify main and backup SMTP servers
-    $mail->SMTPAuth   = true; // Enable SMTP authentication
-    $mail->Username   = 'emmanuel.adeojo.ibk@gmail.com'; // SMTP username
-    $mail->Password   = 'LORDflex2221'; // SMTP password
-    $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted
-    $mail->Port       = 465; // TCP port to connect to 587
-    
-    //Recipients
-    $mail->setFrom('emmanuel.adeojo.ibk@gmail.com', 'Tradexplorer');
-    $mail->addAddress($email, $fullname); // Add a recipient
-    $mail->addReplyTo('noreply@tradexplorer.com', 'Do Not Reply');
-    
-    $url = 'https://localhost:1000/verification/' . $id . '/' . $token . '/' . $from;
-    
-    //Content
-    $mail->isHTML(true); // Set email format to HTML
-    $mail->Subject = 'Tradexplorer Verification';
-    $mail->Body    = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -150,17 +110,4 @@ try {
 			</tr>
 		</table>
 	</body>
-</html>';
-    $mail->send();
-    echo 1;
-}
-catch (Exception $e) {
-    echo json_encode(array(
-        "error" => true,
-        "message" => 'Message could not be sent.',
-        "error" => $mail->ErrorInfo,
-        "data" => $data
-    ));
-}
-
-?>
+</html>
